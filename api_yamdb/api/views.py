@@ -2,36 +2,25 @@ from django.core.mail import EmailMessage
 from django.db.models import Avg
 from django.db.utils import IntegrityError
 from django.shortcuts import get_object_or_404
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import status, viewsets
 from rest_framework.decorators import action
-from rest_framework.filters import SearchFilter, OrderingFilter
-from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.filters import OrderingFilter, SearchFilter
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.views import APIView
+from rest_framework_simplejwt.tokens import RefreshToken
 
 from api.filters import TitleFilter
-from api.permissions import (
-    AdminOnly,
-    IsAdminOrReadOnly,
-    IsUserAdminModeratorAuthorOrReadOnly,
-)
 from api.mixins import ListCreateDestroyViewSet
-from api.serializers import (
-    CategorySerializer,
-    CommentSerializer,
-    GenreSerializer,
-    GetTokenSerializer,
-    NotAdminSerializer,
-    ReviewSerializer,
-    SignUpSerializer,
-    TitleReadSerializer,
-    TitleWriteSerializer,
-    UsersSerializer,
-)
+from api.permissions import (AdminOnly, IsAdminOrReadOnly,
+                             IsUserAdminModeratorAuthorOrReadOnly)
+from api.serializers import (CategorySerializer, CommentSerializer,
+                             GenreSerializer, GetTokenSerializer,
+                             NotAdminSerializer, ReviewSerializer,
+                             SignUpSerializer, TitleReadSerializer,
+                             TitleWriteSerializer, UsersSerializer)
 from reviews.models import Category, Genre, Review, Title, User
-
 
 OCCUPIED_EMAIL = 'Электронная почта уже занята!'
 OCCUPIED_USERNAME = 'Имя пользователя уже занято!'

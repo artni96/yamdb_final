@@ -6,7 +6,6 @@ from django.db import models
 from api.utils import current_year
 from reviews.validators import validate_username
 
-
 ADMIN = 'admin'
 MODERATOR = 'moderator'
 USER = 'user'

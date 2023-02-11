@@ -47,7 +47,7 @@ jobs:
           uses: docker/build-push-action@v2
           with:
             push: true
-            tags: artni96/yamdb_final:latest
+            tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_final:latest
 
   deploy:
     runs-on: ubuntu-latest
@@ -75,4 +75,4 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: ${{ github.workflow }} успешно выполнен! 
+        message: ${{ github.workflow }} успешно выполнен!

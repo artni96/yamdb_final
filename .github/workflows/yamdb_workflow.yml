@@ -44,7 +44,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: artni96/web:latest.
+          tags: artni96/yamdb_final:latest
 
   deploy:
     runs-on: ubuntu-latest

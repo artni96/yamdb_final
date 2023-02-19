@@ -9,7 +9,7 @@ services:
       - ./.env
 
   web:
-    image: artni96/yamdb_final:latest
+    image: artni96/web:latest
     restart: always
     volumes:
       - static_value:/app/api_yamdb/static/

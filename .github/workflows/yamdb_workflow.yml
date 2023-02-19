@@ -45,7 +45,7 @@ jobs:
         with:
           file: api_yamdb/Dockerfile
           push: true
-          tags: artni96/web:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/web:latest
 
   deploy:
     runs-on: ubuntu-latest

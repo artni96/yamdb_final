@@ -76,6 +76,10 @@ sudo docker-compose up -d
 ```
 sudo docker-compose exec web python manage.py migrate
 ```
+- Соберите статику:
+```
+sudo docker-compose exec web python manage.py collectstatic
+```
 - Создайте суперпользователя:
 ```
 sudo docker-compose exec web python manage.py createsuperuser
